@@ -1,19 +1,44 @@
 services:
+
+  # ── Frontend — React/Vite static site (free, no spin-down) ──────────────
+  - type: web
+    name: ecombharat-studio
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: VITE_SUPABASE_PROJECT_ID
+        sync: false
+      - key: VITE_API_URL
+        # Set to your backend service URL after first deploy
+        # e.g. https://ecombharat-api.onrender.com
+        sync: false
+    autoDeploy: true
+
+  # ── Backend — FastAPI (free, spins down after 15 min idle) ──────────────
   - type: web
     name: ecombharat-api
     runtime: python
     plan: free
     buildCommand: pip install -r backend/requirements.txt
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    region: singapore
     envVars:
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_SERVICE_ROLE_KEY
         sync: false
       - key: CORS_ORIGIN
-        # After Vercel deploy, update this to include your Vercel URL:
-        # value: http://localhost:5173,https://ecombharat.vercel.app
-        value: http://localhost:5173
-    healthCheckPath: /health
-    autoDeploy: true
-    region: singapore
+        # Set to your frontend URL after first deploy
+        # e.g. https://ecombharat-studio.onrender.com
+        sync: false
