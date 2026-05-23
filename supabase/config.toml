@@ -1,0 +1,4 @@
+project_id = "sapyrmoxahpncrxmdgyc"
+
+[functions.oauth-callback]
+verify_jwt = false
