@@ -17,6 +17,11 @@ import CalendarPage from "@/pages/team/CalendarPage";
 import NotesPage from "@/pages/team/NotesPage";
 import IdeasPage from "@/pages/team/IdeasPage";
 import WhatsAppPage from "@/pages/team/WhatsAppPage";
+import GrowthStudioPage from "@/pages/growth-hq/GrowthStudioPage";
+import GrowthMarketingPlanPage from "@/pages/growth-hq/GrowthMarketingPlanPage";
+import GrowthFunnelPage from "@/pages/growth-hq/GrowthFunnelPage";
+import GrowthAutomationTrackerPage from "@/pages/growth-hq/GrowthAutomationTrackerPage";
+import GrowthScorecardPage from "@/pages/growth-hq/GrowthScorecardPage";
 import { useAuth } from "@/hooks/useAuth";
 
 const queryClient = new QueryClient();
@@ -46,6 +51,12 @@ export default function App() {
               <Route path="/notes" element={<NotesPage />} />
               <Route path="/ideas" element={<IdeasPage />} />
               <Route path="/whatsapp" element={<WhatsAppPage />} />
+              {/* Growth HQ — separate app section */}
+              <Route path="/ghq/studio" element={<GrowthStudioPage />} />
+              <Route path="/ghq/marketing" element={<GrowthMarketingPlanPage />} />
+              <Route path="/ghq/funnel" element={<GrowthFunnelPage />} />
+              <Route path="/ghq/automation" element={<GrowthAutomationTrackerPage />} />
+              <Route path="/ghq/scorecard" element={<GrowthScorecardPage />} />
             </Route>
           </Route>
           <Route path="*" element={<Navigate to="/auth" replace />} />

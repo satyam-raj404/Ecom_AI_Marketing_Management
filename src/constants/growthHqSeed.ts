@@ -1,0 +1,180 @@
+// Pre-seed data for Growth HQ tables — inserted once on first load
+
+export const PERSONAS_SEED = [
+  {
+    name: "Sharma-ji",
+    age_range: "45–55",
+    business: "FMCG wholesale distributor, 20–30 staff, ₹5–15 Cr/year turnover",
+    geography: "Delhi",
+    tech: "Tally ERP, WhatsApp, Excel for orders",
+    language: "Hindi",
+    pain: "Bad debt from retailers — ₹2–5L stuck every quarter; no visibility on who owes what",
+    trigger: "Fear of being cheated by new retailers; shame of not knowing own numbers",
+    where_to_find: "Delhi wholesale mandi associations, FMCG distributor WhatsApp groups, Facebook",
+    hook: '"Sharma-ji, aapka ₹2,40,000 kahin gaya? Bas ek screen check karo."',
+  },
+  {
+    name: "Pradhan-ji",
+    age_range: "38–50",
+    business: "Grocery distributor for 50–80 kirana stores, ₹2–8 Cr/year",
+    geography: "Odisha",
+    tech: "WhatsApp for orders, pen+paper ledger, sometimes Excel",
+    language: "Odia",
+    pain: "Cannot track daily credit given to kiranas; month-end recovery is chaotic and stressful",
+    trigger: "Embarrassment when he can't tell his family how much money is out on credit",
+    where_to_find: "Cuttack/Bhubaneswar mandi, Odia business WhatsApp groups, local kirana associations",
+    hook: '"Mahina shesh haina, udhar track kaiti parichha? EcomBharat dekhaaiba."',
+  },
+  {
+    name: "Reddy-garu",
+    age_range: "40–55",
+    business: "Provisions & dry goods wholesale, Bengaluru, ₹3–12 Cr/year",
+    geography: "Bengaluru",
+    tech: "Busy accounting app, WhatsApp for orders, Paytm for payments",
+    language: "Kannada / English mix",
+    pain: "Retailers order via WhatsApp — no systemised way to manage orders, duplicates happen",
+    trigger: "Competitor distributors are going digital; fears being left behind",
+    where_to_find: "APMC Yeshwanthpur traders, Bengaluru wholesale Facebook groups, LinkedIn for larger distributors",
+    hook: '"Orders on WhatsApp, ₹40,000 gappa? EcomBharat fixes that in Day 1."',
+  },
+];
+
+export const RESOURCES_SEED = [
+  { name: "Cuttack Chamber of Commerce", geography: "Odisha", type: "Association", link: "", notes: "Main wholesalers association in Cuttack — good for offline outreach", priority: "High" },
+  { name: "Bengaluru APMC Yeshwanthpur", geography: "Bengaluru", type: "Mandi", link: "", notes: "Largest agricultural produce market in Bengaluru — thousands of traders", priority: "High" },
+  { name: "Ranchi Chamber of Commerce", geography: "Jharkhand", type: "Association", link: "", notes: "Key association for Jharkhand MSME owners", priority: "Medium" },
+  { name: "Wholesale Business India", geography: "Other", type: "Facebook Group", link: "", notes: "Large FB group for wholesale business owners across India", priority: "High" },
+  { name: "r/IndianStartups", geography: "Other", type: "Reddit", link: "https://reddit.com/r/IndianStartups", notes: "Build-in-public threads and founder community", priority: "Medium" },
+  { name: "Odia Business Network (FB)", geography: "Odisha", type: "Facebook Group", link: "", notes: "Odia language FB group for Odisha business owners", priority: "High" },
+  { name: "Kannada Business Network (FB)", geography: "Bengaluru", type: "Facebook Group", link: "", notes: "Kannada/Bengaluru small business owners group", priority: "Medium" },
+];
+
+export const PSYCHOLOGY_HOOKS = [
+  { trick: "Pain One Std Dev Away", what_it_does: "Push the pain closer — show a near-future version of their problem, not a distant one", ecombharat_example: '"Your udhaar is ₹1.8L today. By December it will be ₹4L if nothing changes."', where_to_use: "Reel hook, carousel slide 1, ad headline" },
+  { trick: "Twist the Knife", what_it_does: "Once you've named the pain, amplify it emotionally before offering relief", ecombharat_example: '"And the worst part? You\'ll spend Sunday chasing payments while your competitor is adding new retailers."', where_to_use: "Reel middle section, email line 2" },
+  { trick: "Audience of One (\"You\")", what_it_does: "Address one specific person directly — makes mass content feel personal", ecombharat_example: '"This is for the distributor sitting on 40+ udhaar accounts right now."', where_to_use: "Every hook, DMs, WhatsApp message openers" },
+  { trick: "Pain–Solution Gap", what_it_does: "Show the problem clearly, then pause — let tension build before revealing the fix", ecombharat_example: '"Most distributors lose ₹2–5L/year to bad debt. [pause] There\'s a 10-second fix."', where_to_use: "Carousel structure, reel script, LinkedIn post" },
+  { trick: "Sprint to Trust in 10–30s", what_it_does: "Front-load credibility — say something undeniably true about their life fast", ecombharat_example: '"If you run a wholesale business on WhatsApp + Tally, you already know this feeling…"', where_to_use: "First 5 seconds of every reel, email subject" },
+  { trick: "Visual Proof", what_it_does: "Show a screenshot, dashboard, number, or before/after — don't just claim it", ecombharat_example: "Screen recording of Bad Debt Dashboard showing ₹80,000 recovered in Week 1", where_to_use: "Reels, Instagram stories, case study carousels" },
+  { trick: "Common Ground", what_it_does: "Align your experience with theirs — builds instant trust through shared struggle", ecombharat_example: '"We spoke to 200+ distributors. Every single one said: udhaar is the #1 stress."', where_to_use: "LinkedIn posts, intro slides, build-in-public threads" },
+  { trick: "Point of Difference", what_it_does: "Clearly say what makes you different from everything else they've tried", ecombharat_example: '"Tally tracks the past. EcomBharat prevents the loss — real time, on your phone."', where_to_use: "Carousel slide 3, comparison posts, ad copy" },
+  { trick: "Structured List", what_it_does: "Use numbered/bulleted formats — brains parse lists faster and remember them better", ecombharat_example: '"3 signs your udhaar is out of control: 1) You don\'t know the exact number 2) A retailer surprised you 3) You avoided calling someone"', where_to_use: "LinkedIn threads, carousel format, X threads" },
+  { trick: "Infectious Energy", what_it_does: "Match and lift your audience's energy — enthusiasm is contagious on camera", ecombharat_example: "Creator is visibly excited showing a distributor checking their recovered amount live", where_to_use: "Reels, live videos, testimonial edits" },
+  { trick: "Open Loop / The Hunt", what_it_does: "Tease what's coming — your brain can't rest until the loop is closed", ecombharat_example: '"I\'ll show you the exact screen he opened. But first — let me tell you what happened on Day 1."', where_to_use: "Reel narration, carousel middle slides, series posts" },
+  { trick: "Re-Hook Constantly", what_it_does: "Place mini-hooks every 5–8 seconds to prevent drop-off", ecombharat_example: '"But wait — that\'s not even the best feature. Here\'s what saves them 3 hours/week…"', where_to_use: "Reels (every 5–8s), long carousels (every 3 slides)" },
+  { trick: "Trans-Rhythm Sentence Variation", what_it_does: "Mix very short sentences with longer ones to control pace and maintain attention", ecombharat_example: '"He lost ₹2.4L. Just like that. In one quarter. And he didn\'t even know until his wife asked."', where_to_use: "Reel voiceover scripts, LinkedIn posts, email copy" },
+  { trick: "Don't Sound Like a Hook (Casual)", what_it_does: "Make the hook feel like a conversation, not a content opener — kills scroll reflex", ecombharat_example: '"Ok so this might be a weird thing to say but — do you actually know how much udhaar you have right now?"', where_to_use: "Reel openers, DM openers, Facebook posts" },
+  { trick: "Fear Shown Not Stated", what_it_does: "Imply the fear through a scene or consequence rather than saying 'be afraid'", ecombharat_example: "Show a distributor calling 10 retailers on Sunday for collections — no narration needed", where_to_use: "POV reels, story-format posts, silent video ads" },
+  { trick: "Sell Speed, Not Info", what_it_does: "Emphasise how fast results come — people want quick wins, not knowledge", ecombharat_example: '"In 10 minutes from now, you\'ll know exactly who owes you money. Not tomorrow. Now."', where_to_use: "CTAs, ad copy, DM follow-ups, waitlist sign-up page" },
+  { trick: "Surprise / Overdeliver", what_it_does: "Give more than promised — the extra creates delight and shares", ecombharat_example: "End a bad-debt reel with a free PDF: '27 Reasons Distributors Lose Money' — not just 5", where_to_use: "Video CTAs, lead magnets, case study posts" },
+  { trick: "Recap + CTA Close", what_it_does: "Summarise the key point and give one clear next action — never leave them hanging", ecombharat_example: '"Udhaar tracked, alerts set, recovery started. Useful? → link in bio for early access."', where_to_use: "End of every reel/video, last carousel slide, email P.S." },
+];
+
+export const CONTENT_IDEAS_SEED = [
+  // EVERGREEN (50%)
+  { title: "How Indian wholesalers lose ₹2–5L/year to bad debt (explainer)", ecg_type: "EVERGREEN", persona: "Sharma-ji", format: "Carousel", funnel_stage: "Top", status: "Idea" },
+  { title: "5 signs your udhaar is out of control — checklist", ecg_type: "EVERGREEN", persona: "Pradhan-ji", format: "Carousel", funnel_stage: "Top", status: "Idea" },
+  { title: "Tally vs EcomBharat — what's different (honest comparison)", ecg_type: "EVERGREEN", persona: "Sharma-ji", format: "Carousel", funnel_stage: "Mid", status: "Idea" },
+  { title: "Day in the life of a wholesale distributor in 2026", ecg_type: "EVERGREEN", persona: "Pradhan-ji", format: "Reel", funnel_stage: "Top", status: "Idea" },
+  { title: "What is 'bad debt' and why every wholesaler has it", ecg_type: "EVERGREEN", persona: "Reddy-garu", format: "Video", funnel_stage: "Top", status: "Idea" },
+  { title: "WhatsApp + Tally = ₹3L/year leak? Here's the math", ecg_type: "EVERGREEN", persona: "Sharma-ji", format: "Carousel", funnel_stage: "Top", status: "Idea" },
+  { title: "How to track udhaar on WhatsApp (manual vs EcomBharat)", ecg_type: "EVERGREEN", persona: "Pradhan-ji", format: "Carousel", funnel_stage: "Mid", status: "Idea" },
+  { title: "3 questions to ask every new retailer before giving credit", ecg_type: "EVERGREEN", persona: "Reddy-garu", format: "Post", funnel_stage: "Top", status: "Idea" },
+  { title: "₹80,000 recovered in Week 1 — pilot story breakdown", ecg_type: "EVERGREEN", persona: "Sharma-ji", format: "Video", funnel_stage: "Bottom", status: "Idea" },
+  { title: "Wholesale business basics: credit terms explained (Hinglish)", ecg_type: "EVERGREEN", persona: "Pradhan-ji", format: "Reel", funnel_stage: "Top", status: "Idea" },
+  { title: "Why Bengaluru APMC traders are switching to digital tracking", ecg_type: "EVERGREEN", persona: "Reddy-garu", format: "Post", funnel_stage: "Top", status: "Idea" },
+  { title: "Founder story: Why we built EcomBharat (honest video)", ecg_type: "EVERGREEN", persona: "Sharma-ji", format: "Video", funnel_stage: "Mid", status: "Idea" },
+  { title: "Indian SMB wholesaler starter pack (meme format)", ecg_type: "EVERGREEN", persona: "Pradhan-ji", format: "Post", funnel_stage: "Top", status: "Idea" },
+  { title: "Behind the scenes: Building for Odisha distributors", ecg_type: "EVERGREEN", persona: "Pradhan-ji", format: "Reel", funnel_stage: "Mid", status: "Idea" },
+  { title: "Monthly udhaar review — template for distributors", ecg_type: "EVERGREEN", persona: "Sharma-ji", format: "Post", funnel_stage: "Mid", status: "Idea" },
+  // CONTROVERSY (20%)
+  { title: "Hot take: Tally made bad debt worse for Indian distributors", ecg_type: "CONTROVERSY", persona: "Sharma-ji", format: "Post", funnel_stage: "Top", status: "Idea" },
+  { title: "Why 'going digital' advice from CA firms is wrong for wholesalers", ecg_type: "CONTROVERSY", persona: "Reddy-garu", format: "Carousel", funnel_stage: "Top", status: "Idea" },
+  { title: "Unpopular opinion: WhatsApp groups are killing wholesale margins", ecg_type: "CONTROVERSY", persona: "Pradhan-ji", format: "Post", funnel_stage: "Top", status: "Idea" },
+  { title: "Myth: 'Good relationships prevent bad debt' — why this fails", ecg_type: "CONTROVERSY", persona: "Sharma-ji", format: "Carousel", funnel_stage: "Mid", status: "Idea" },
+  { title: "The ₹4.8 Lakh Cr problem nobody in Indian B2B tech is solving honestly", ecg_type: "CONTROVERSY", persona: "Reddy-garu", format: "Post", funnel_stage: "Top", status: "Idea" },
+  { title: "Why most distributor apps fail (and what we're doing differently)", ecg_type: "CONTROVERSY", persona: "Sharma-ji", format: "Video", funnel_stage: "Mid", status: "Idea" },
+  // GROWTH (30%)
+  { title: '"EcomBharat saved me 3 hours/Sunday" — pilot testimonial reel', ecg_type: "GROWTH", persona: "Pradhan-ji", format: "Reel", funnel_stage: "Bottom", status: "Idea" },
+  { title: "Join the first 100 pilot wholesalers — what you get", ecg_type: "GROWTH", persona: "Sharma-ji", format: "Post", funnel_stage: "Bottom", status: "Idea" },
+  { title: "Bad Debt Calculator — try it free (lead magnet CTA)", ecg_type: "GROWTH", persona: "Reddy-garu", format: "Reel", funnel_stage: "Bottom", status: "Idea" },
+  { title: "Week 6 build-in-public update — what we shipped", ecg_type: "GROWTH", persona: "Sharma-ji", format: "Post", funnel_stage: "Mid", status: "Idea" },
+  { title: "Live demo: EcomBharat in action for a Bengaluru distributor", ecg_type: "GROWTH", persona: "Reddy-garu", format: "Video", funnel_stage: "Bottom", status: "Idea" },
+  { title: "Pre-registration open — 3 reasons to join the waitlist now", ecg_type: "GROWTH", persona: "Pradhan-ji", format: "Carousel", funnel_stage: "Bottom", status: "Idea" },
+  { title: "Pilot user Q&A — your questions answered live", ecg_type: "GROWTH", persona: "Sharma-ji", format: "Video", funnel_stage: "Bottom", status: "Idea" },
+  { title: "Week 1 metrics: What our beta testers are seeing", ecg_type: "GROWTH", persona: "Reddy-garu", format: "Post", funnel_stage: "Mid", status: "Idea" },
+  { title: "Comment 'DEMO' to see EcomBharat in 10 minutes", ecg_type: "GROWTH", persona: "Sharma-ji", format: "Reel", funnel_stage: "Bottom", status: "Idea" },
+];
+
+export const COMPETITORS_SEED = [
+  { name: "Tally", what_they_do: "Accounting & ERP software for SMBs — market leader in India", content_angle: "Feature-heavy tutorials, CA-focused messaging, compliance topics", ads_link: "", weakness: "Not built for real-time udhaar tracking; offline-first, complex UI for non-accountants", counter: "EcomBharat is for the distributor, not the CA. Mobile-first, zero training needed", notes: "Used by ~90% of our target users — we work WITH Tally data, not against it" },
+  { name: "Vyapar", what_they_do: "Mobile billing & accounting app for SMBs — Tally alternative", content_angle: "Free tier push, GST billing features, ease-of-use vs Tally", ads_link: "", weakness: "Billing-focused — doesn't solve credit/udhaar tracking or retailer relationship management", counter: "We don't do billing — we solve the problem Vyapar doesn't: credit risk and recovery", notes: "Popular among smaller businesses; different use case from EcomBharat" },
+  { name: "Khatabook", what_they_do: "Digital ledger / credit tracking for small shop owners", content_angle: "Hindi-first, kirana-focused, 'digital khata' messaging", ads_link: "", weakness: "Single-store tracking — not built for distributors managing 50–200 retailer accounts", counter: "EcomBharat is for the supplier/distributor, not the shop owner — multi-account analytics", notes: "Good for kiranas; we serve the businesses supplying those kiranas" },
+  { name: "OkCredit", what_they_do: "Credit tracking app for small businesses", content_angle: "Simple UPI-linked credit tracker, very grassroots marketing", ads_link: "", weakness: "Consumer-grade app — no bulk analytics, no order management, no distributor-tier features", counter: "Enterprise-grade udhaar tracking for wholesalers — not a basic ledger", notes: "Has large user base in Tier 2-3; watch for product expansion" },
+  { name: "Dukaan", what_they_do: "Online store builder for small businesses", content_angle: "D2C push, 'start your online shop in 30 seconds'", ads_link: "", weakness: "B2C focused — doesn't solve B2B wholesale credit, bulk ordering or trade credit", counter: "We solve the B2B wholesale layer — the supply chain behind Dukaan sellers", notes: "Different market; indirect competitor for founder attention/funding narrative" },
+  { name: "Udaan", what_they_do: "B2B e-commerce platform for wholesale buying", content_angle: "Large catalogue, credit marketplace, delivery logistics", ads_link: "", weakness: "Platform play — they ARE the marketplace; we help distributors who sell outside Udaan too", counter: "EcomBharat is for distributors with their own retail network, not Udaan-dependent", notes: "Some overlap in Bengaluru FMCG — watch their credit product expansion" },
+  { name: "BharatPe", what_they_do: "Payments & credit for small merchants", content_angle: "Loan push, QR code payments, merchant lending", ads_link: "", weakness: "Payments-first — no order management, no udhaar analytics, no distributor relationship mgmt", counter: "We complement BharatPe — payments through them, tracking through us", notes: "Potential integration partner; not direct competitor in the udhaar analytics space" },
+];
+
+export const AUTOMATIONS_SEED = [
+  { task: "Content Research", tool: "Perplexity AI", cost: "Free", priority: "High", status: "To Do", owner: "Satyam", notes: "Research trending wholesale topics, competitor content gaps" },
+  { task: "Post Scheduling", tool: "Buffer", cost: "$15/mo", priority: "High", status: "To Do", owner: "Satyam", notes: "Schedule all posts 1 week ahead across IG, FB, LinkedIn, X" },
+  { task: "Reel Script Generation", tool: "Claude (Anthropic)", cost: "$20/mo", priority: "High", status: "To Do", owner: "Satyam", notes: "Generate hooks + scripts from ECG board ideas" },
+  { task: "Image & Thumbnail Gen", tool: "Gemini / DALL-E", cost: "Free / $20", priority: "Medium", status: "To Do", owner: "Dipali", notes: "Create carousel graphics and reel thumbnails" },
+  { task: "AI Avatar Videos", tool: "HeyGen", cost: "$29/mo", priority: "Medium", status: "To Do", owner: "Satyam", notes: "Create Hinglish explainer videos without filming" },
+  { task: "DM Auto-Reply (Comment 'DEMO')", tool: "ManyChat", cost: "Free tier", priority: "High", status: "To Do", owner: "Dipali", notes: "Auto-reply to DEMO keyword on Instagram — capture leads" },
+  { task: "Lead Capture Form", tool: "Google Form → Sheet", cost: "Free", priority: "High", status: "To Do", owner: "Amitav", notes: "Pre-registration form → auto-sync to Lead Hunter pipeline" },
+  { task: "WhatsApp Contact Extraction", tool: "Manual + script", cost: "Free", priority: "Medium", status: "To Do", owner: "Dipali", notes: "Export group chats → parse → add to leads pipeline" },
+  { task: "Weekly Report Generation", tool: "Claude (Anthropic)", cost: "$20/mo", priority: "Medium", status: "To Do", owner: "Satyam", notes: "Auto-generate weekly content performance summary from Scorecard" },
+  { task: "Nurture Sequence (WhatsApp drip)", tool: "n8n", cost: "Free self-hosted", priority: "High", status: "To Do", owner: "Amitav", notes: "Automate drip messages to waitlist leads over 2 weeks" },
+  { task: "Competitor Ad Monitoring", tool: "Meta Ad Library", cost: "Free", priority: "Low", status: "To Do", owner: "Satyam", notes: "Weekly manual check of Tally, Vyapar, Khatabook ads" },
+];
+
+export const SCORECARD_SEED = [
+  { metric: "Reels posted", w1: "", w2: "", w3: "", w4: "", target: "28", sort_order: 1 },
+  { metric: "Carousels posted", w1: "", w2: "", w3: "", w4: "", target: "16", sort_order: 2 },
+  { metric: "Stories posted", w1: "", w2: "", w3: "", w4: "", target: "28", sort_order: 3 },
+  { metric: "Best reel reach", w1: "", w2: "", w3: "", w4: "", target: "10,000", sort_order: 4 },
+  { metric: "New IG followers", w1: "", w2: "", w3: "", w4: "", target: "200", sort_order: 5 },
+  { metric: "DMs received", w1: "", w2: "", w3: "", w4: "", target: "50", sort_order: 6 },
+  { metric: "Waitlist sign-ups", w1: "", w2: "", w3: "", w4: "", target: "100", sort_order: 7 },
+  { metric: "Calculator downloads", w1: "", w2: "", w3: "", w4: "", target: "50", sort_order: 8 },
+  { metric: "Demo conversations", w1: "", w2: "", w3: "", w4: "", target: "15", sort_order: 9 },
+  { metric: "FB groups joined", w1: "", w2: "", w3: "", w4: "", target: "10", sort_order: 10 },
+  { metric: "Field contacts made", w1: "", w2: "", w3: "", w4: "", target: "20", sort_order: 11 },
+];
+
+export const CALENDAR_SEED = [
+  // Week 1
+  { day: "Week 1 — Mon", platform: "LinkedIn", ecg_type: "EVERGREEN", content: "Founder story: Why we built EcomBharat", format: "Video", status: "Planned", sort_order: 1 },
+  { day: "Week 1 — Tue", platform: "Instagram", ecg_type: "CONTROVERSY", content: "Hot take: Tally made bad debt worse for distributors", format: "Reel", status: "Planned", sort_order: 2 },
+  { day: "Week 1 — Wed", platform: "Facebook", ecg_type: "EVERGREEN", content: "5 signs your udhaar is out of control — checklist", format: "Carousel", status: "Planned", sort_order: 3 },
+  { day: "Week 1 — Thu", platform: "X", ecg_type: "GROWTH", content: "Week 6 build-in-public update — what we shipped", format: "Post", status: "Planned", sort_order: 4 },
+  { day: "Week 1 — Fri", platform: "Instagram", ecg_type: "EVERGREEN", content: "How Indian wholesalers lose ₹2–5L/year to bad debt", format: "Carousel", status: "Planned", sort_order: 5 },
+  { day: "Week 1 — Sat", platform: "Instagram", ecg_type: "EVERGREEN", content: "Day in the life of a wholesale distributor in 2026", format: "Reel", status: "Planned", sort_order: 6 },
+  { day: "Week 1 — Sun", platform: "WhatsApp", ecg_type: "EVERGREEN", content: "Wholesaler tip of the week — udhaar tracking checklist", format: "Post", status: "Planned", sort_order: 7 },
+  // Week 2
+  { day: "Week 2 — Mon", platform: "LinkedIn", ecg_type: "GROWTH", content: "Pre-registration open — 3 reasons to join the waitlist", format: "Carousel", status: "Planned", sort_order: 8 },
+  { day: "Week 2 — Tue", platform: "Instagram", ecg_type: "EVERGREEN", content: "₹80,000 recovered in Week 1 — pilot story breakdown", format: "Reel", status: "Planned", sort_order: 9 },
+  { day: "Week 2 — Wed", platform: "Facebook", ecg_type: "CONTROVERSY", content: "Unpopular opinion: WhatsApp groups are killing margins", format: "Post", status: "Planned", sort_order: 10 },
+  { day: "Week 2 — Thu", platform: "LinkedIn", ecg_type: "EVERGREEN", content: "3 questions to ask every new retailer before giving credit", format: "Post", status: "Planned", sort_order: 11 },
+  { day: "Week 2 — Fri", platform: "Instagram", ecg_type: "GROWTH", content: "Bad Debt Calculator — try it free (lead magnet CTA)", format: "Reel", status: "Planned", sort_order: 12 },
+  { day: "Week 2 — Sat", platform: "Facebook", ecg_type: "EVERGREEN", content: "Wholesale business basics: credit terms explained (Hinglish)", format: "Post", status: "Planned", sort_order: 13 },
+  { day: "Week 2 — Sun", platform: "WhatsApp", ecg_type: "GROWTH", content: "Pilot invite — join the first 100 wholesalers", format: "Post", status: "Planned", sort_order: 14 },
+  // Week 3
+  { day: "Week 3 — Mon", platform: "LinkedIn", ecg_type: "EVERGREEN", content: "Common ground: we spoke to 200+ distributors — here's what they said", format: "Post", status: "Planned", sort_order: 15 },
+  { day: "Week 3 — Tue", platform: "Instagram", ecg_type: "EVERGREEN", content: "Indian SMB wholesaler starter pack (meme format)", format: "Post", status: "Planned", sort_order: 16 },
+  { day: "Week 3 — Wed", platform: "Facebook", ecg_type: "GROWTH", content: "Live demo: EcomBharat in action for a Bengaluru distributor", format: "Video", status: "Planned", sort_order: 17 },
+  { day: "Week 3 — Thu", platform: "X", ecg_type: "CONTROVERSY", content: "The ₹4.8 Lakh Cr problem nobody in Indian B2B tech is solving", format: "Post", status: "Planned", sort_order: 18 },
+  { day: "Week 3 — Fri", platform: "Instagram", ecg_type: "GROWTH", content: '"EcomBharat saved me 3 hours/Sunday" — pilot testimonial', format: "Reel", status: "Planned", sort_order: 19 },
+  { day: "Week 3 — Sat", platform: "LinkedIn", ecg_type: "EVERGREEN", content: "Tally vs EcomBharat — honest comparison", format: "Carousel", status: "Planned", sort_order: 20 },
+  { day: "Week 3 — Sun", platform: "WhatsApp", ecg_type: "EVERGREEN", content: "Weekend tip: how to review your udhaar list in 5 minutes", format: "Post", status: "Planned", sort_order: 21 },
+  // Week 4
+  { day: "Week 4 — Mon", platform: "LinkedIn", ecg_type: "GROWTH", content: "Pilot user Q&A — your questions answered live", format: "Video", status: "Planned", sort_order: 22 },
+  { day: "Week 4 — Tue", platform: "Instagram", ecg_type: "EVERGREEN", content: "Behind the scenes: Building for Odisha distributors", format: "Reel", status: "Planned", sort_order: 23 },
+  { day: "Week 4 — Wed", platform: "Facebook", ecg_type: "CONTROVERSY", content: "Myth: 'Good relationships prevent bad debt' — why this fails", format: "Carousel", status: "Planned", sort_order: 24 },
+  { day: "Week 4 — Thu", platform: "X", ecg_type: "GROWTH", content: "Week 1 metrics: What our beta testers are seeing", format: "Post", status: "Planned", sort_order: 25 },
+  { day: "Week 4 — Fri", platform: "Instagram", ecg_type: "GROWTH", content: "Comment 'DEMO' to see EcomBharat in 10 minutes", format: "Reel", status: "Planned", sort_order: 26 },
+  { day: "Week 4 — Sat", platform: "Facebook", ecg_type: "EVERGREEN", content: "Monthly udhaar review — template for distributors", format: "Post", status: "Planned", sort_order: 27 },
+  { day: "Week 4 — Sun", platform: "WhatsApp", ecg_type: "GROWTH", content: "Last call: pre-registration closes — join the waitlist", format: "Post", status: "Planned", sort_order: 28 },
+];

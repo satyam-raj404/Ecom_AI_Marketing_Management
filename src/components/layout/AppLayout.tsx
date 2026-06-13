@@ -2,6 +2,7 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import {
   Link2, FileSpreadsheet, Play, Image, Settings, LogOut,
   LayoutDashboard, PencilLine, Target, MessageSquare, Search, Calendar, NotebookPen, Lightbulb, Smartphone,
+  Palette, Megaphone, Wind, Cog, BarChart3,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -22,7 +23,15 @@ const TEAM = [
   { to: "/calendar",        label: "Calendar",          icon: Calendar },
   { to: "/notes",           label: "Notes & Wins",      icon: NotebookPen },
   { to: "/ideas",           label: "Idea Bank",         icon: Lightbulb },
-  { to: "/whatsapp",       label: "WA Leads",          icon: Smartphone },
+  { to: "/whatsapp",        label: "WA Leads",          icon: Smartphone },
+];
+
+const GROWTH_HQ = [
+  { to: "/ghq/studio",     label: "Content Studio",    icon: Palette },
+  { to: "/ghq/marketing",  label: "Marketing Plan",    icon: Megaphone },
+  { to: "/ghq/funnel",     label: "Funnel",            icon: Wind },
+  { to: "/ghq/automation", label: "Automation",        icon: Cog },
+  { to: "/ghq/scorecard",  label: "Scorecard",         icon: BarChart3 },
 ];
 
 // 5 most-used items for mobile bottom nav
@@ -56,6 +65,13 @@ export default function AppLayout() {
             <span className="h-px flex-1 bg-white/10" />
           </div>
           {TEAM.map((item) => <NavItem key={item.to} {...item} />)}
+
+          <div className="my-4 flex items-center gap-2 px-3">
+            <span className="h-px flex-1 bg-white/10" />
+            <span className="text-[10px] tracking-widest text-mustard/80">GROWTH HQ</span>
+            <span className="h-px flex-1 bg-white/10" />
+          </div>
+          {GROWTH_HQ.map((item) => <NavItem key={item.to} {...item} />)}
         </nav>
         <button
           onClick={signOut}
