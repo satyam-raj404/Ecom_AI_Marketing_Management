@@ -1,8 +1,8 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import {
   Link2, FileSpreadsheet, Play, Image, Settings, LogOut,
-  LayoutDashboard, PencilLine, Target, MessageSquare, Search, Calendar, NotebookPen, Lightbulb, Smartphone,
-  Palette, Megaphone, Wind, Cog, BarChart3,
+  Target, PencilLine, MessageSquare, Search, Calendar, Lightbulb, Smartphone,
+  Palette, Megaphone, Wind, Cog, BarChart3, BookOpen,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -15,15 +15,13 @@ const STUDIO = [
 ];
 
 const TEAM = [
-  { to: "/team",            label: "Dashboard",         icon: LayoutDashboard },
-  { to: "/weekly-update",   label: "Weekly KPI Update", icon: PencilLine },
-  { to: "/marketing",       label: "Marketing Plan",    icon: Target },
-  { to: "/reddit",          label: "Reddit Outreach",   icon: MessageSquare },
-  { to: "/leads",           label: "Lead Hunter",       icon: Search },
-  { to: "/calendar",        label: "Calendar",          icon: Calendar },
-  { to: "/notes",           label: "Notes & Wins",      icon: NotebookPen },
-  { to: "/ideas",           label: "Idea Bank",         icon: Lightbulb },
-  { to: "/whatsapp",        label: "WA Leads",          icon: Smartphone },
+  { to: "/team",          label: "Target Board",      icon: Target },
+  { to: "/weekly-update", label: "Weekly KPI Update", icon: PencilLine },
+  { to: "/reddit",        label: "Reddit Outreach",   icon: MessageSquare },
+  { to: "/leads",         label: "Lead Hunter",       icon: Search },
+  { to: "/calendar",      label: "Calendar",          icon: Calendar },
+  { to: "/ideas",         label: "Idea Bank",         icon: Lightbulb },
+  { to: "/whatsapp",      label: "WA Leads",          icon: Smartphone },
 ];
 
 const GROWTH_HQ = [
@@ -32,14 +30,15 @@ const GROWTH_HQ = [
   { to: "/ghq/funnel",     label: "Funnel",            icon: Wind },
   { to: "/ghq/automation", label: "Automation",        icon: Cog },
   { to: "/ghq/scorecard",  label: "Scorecard",         icon: BarChart3 },
+  { to: "/ghq/context",    label: "ECOM AI Context",   icon: BookOpen },
 ];
 
 // 5 most-used items for mobile bottom nav
 const MOBILE_NAV = [
-  { to: "/team",          label: "Home",  icon: LayoutDashboard },
+  { to: "/team",          label: "Board", icon: Target },
   { to: "/weekly-update", label: "KPI",   icon: PencilLine },
   { to: "/leads",         label: "Leads", icon: Search },
-  { to: "/notes",         label: "Notes", icon: NotebookPen },
+  { to: "/calendar",      label: "Cal",   icon: Calendar },
   { to: "/ideas",         label: "Ideas", icon: Lightbulb },
 ];
 

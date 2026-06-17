@@ -371,6 +371,42 @@ export type Database = {
         }
         Relationships: []
       }
+      team_profiles: {
+        Row: {
+          id: string
+          user_id: string
+          email: string | null
+          display_name: string
+          position: string
+          role: string
+          invited_by: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          email?: string | null
+          display_name?: string
+          position?: string
+          role?: string
+          invited_by?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          email?: string | null
+          display_name?: string
+          position?: string
+          role?: string
+          invited_by?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       team_ideas: {
         Row: {
           author: string
@@ -470,6 +506,39 @@ export type Database = {
           image_model_provider?: string | null
           updated_at?: string | null
           user_id?: string
+        }
+        Relationships: []
+      }
+      user_goals: {
+        Row: {
+          id: string
+          user_id: string
+          week_of: string
+          month_year: string
+          monthly_goals: Json
+          weekly_goals: Json
+          custom_kpis: Json
+          filled_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          week_of: string
+          month_year: string
+          monthly_goals?: Json
+          weekly_goals?: Json
+          custom_kpis?: Json
+          filled_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          week_of?: string
+          month_year?: string
+          monthly_goals?: Json
+          weekly_goals?: Json
+          custom_kpis?: Json
+          filled_at?: string | null
         }
         Relationships: []
       }

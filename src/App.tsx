@@ -8,7 +8,7 @@ import ConnectorsPage from "@/pages/ConnectorsPage";
 import SheetPage from "@/pages/SheetPage";
 import GalleryPage from "@/pages/GalleryPage";
 import SettingsPage from "@/pages/SettingsPage";
-import DashboardPage from "@/pages/team/DashboardPage";
+import TargetBoardPage from "@/pages/team/TargetBoardPage";
 import WeeklyUpdatePage from "@/pages/team/WeeklyUpdatePage";
 import LeadsPage from "@/pages/team/LeadsPage";
 import MarketingPage from "@/pages/team/MarketingPage";
@@ -22,6 +22,7 @@ import GrowthMarketingPlanPage from "@/pages/growth-hq/GrowthMarketingPlanPage";
 import GrowthFunnelPage from "@/pages/growth-hq/GrowthFunnelPage";
 import GrowthAutomationTrackerPage from "@/pages/growth-hq/GrowthAutomationTrackerPage";
 import GrowthScorecardPage from "@/pages/growth-hq/GrowthScorecardPage";
+import EcomAIContextPage from "@/pages/growth-hq/EcomAIContextPage";
 import { useAuth } from "@/hooks/useAuth";
 
 const queryClient = new QueryClient();
@@ -42,7 +43,7 @@ export default function App() {
               <Route path="/sheet" element={<SheetPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/settings" element={<SettingsPage />} />
-              <Route path="/team" element={<DashboardPage />} />
+              <Route path="/team" element={<TargetBoardPage />} />
               <Route path="/weekly-update" element={<WeeklyUpdatePage />} />
               <Route path="/marketing" element={<MarketingPage />} />
               <Route path="/reddit" element={<RedditPage />} />
@@ -57,6 +58,7 @@ export default function App() {
               <Route path="/ghq/funnel" element={<GrowthFunnelPage />} />
               <Route path="/ghq/automation" element={<GrowthAutomationTrackerPage />} />
               <Route path="/ghq/scorecard" element={<GrowthScorecardPage />} />
+              <Route path="/ghq/context" element={<EcomAIContextPage />} />
             </Route>
           </Route>
           <Route path="*" element={<Navigate to="/auth" replace />} />
