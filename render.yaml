@@ -1,10 +1,8 @@
 services:
 
-  # ── Frontend — React/Vite static site ────────────────────────────────────
-  # Free tier: never spins down, global CDN, auto-deploy on push
-  - type: web
+  # ── Frontend — React/Vite static site ─────────────────────────────────────
+  - type: static
     name: ecombharat-studio
-    runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     pullRequestPreviewsEnabled: false
@@ -17,38 +15,30 @@ services:
         name: Cache-Control
         value: public, max-age=31536000, immutable
     envVars:
-      # Supabase (publishable/anon key — safe to expose in frontend)
       - key: VITE_SUPABASE_URL
         value: https://qogdmqtvboqwzipmgtda.supabase.co
       - key: VITE_SUPABASE_PROJECT_ID
         value: qogdmqtvboqwzipmgtda
       - key: VITE_SUPABASE_PUBLISHABLE_KEY
-        sync: false          # paste sb_publishable_... key from Supabase dashboard
-      # FastAPI backend URL — fill after backend service deploys
+        sync: false
       - key: VITE_API_URL
-        sync: false          # e.g. https://ecombharat-api.onrender.com
-    autoDeploy: true
+        sync: false
 
-  # ── Backend — FastAPI web service ─────────────────────────────────────────
-  # Free tier: spins down after 15 min idle → keep warm with UptimeRobot
-  # Ping: https://ecombharat-api.onrender.com/health every 14 min
+  # ── Backend — FastAPI web service ──────────────────────────────────────────
   - type: web
     name: ecombharat-api
     runtime: python
     plan: free
     region: singapore
-    pythonVersion: "3.12.0"
+    pythonVersion: "3.12"
     buildCommand: pip install -r backend/requirements.txt
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     autoDeploy: true
     envVars:
-      # Supabase — use SERVICE ROLE key here (server-side, bypasses RLS)
       - key: SUPABASE_URL
         value: https://qogdmqtvboqwzipmgtda.supabase.co
       - key: SUPABASE_SERVICE_ROLE_KEY
-        sync: false          # paste sb_secret_... key from Supabase dashboard
-      # CORS — comma-separated origins, set after frontend deploys
-      # e.g. https://ecombharat-studio.onrender.com
+        sync: false
       - key: CORS_ORIGIN
         sync: false
