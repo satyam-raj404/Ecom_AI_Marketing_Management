@@ -23,6 +23,7 @@ import GrowthFunnelPage from "@/pages/growth-hq/GrowthFunnelPage";
 import GrowthAutomationTrackerPage from "@/pages/growth-hq/GrowthAutomationTrackerPage";
 import GrowthScorecardPage from "@/pages/growth-hq/GrowthScorecardPage";
 import EcomAIContextPage from "@/pages/growth-hq/EcomAIContextPage";
+import AccessManagementPage from "@/pages/AccessManagementPage";
 import { useAuth } from "@/hooks/useAuth";
 
 const queryClient = new QueryClient();
@@ -59,6 +60,7 @@ export default function App() {
               <Route path="/ghq/automation" element={<GrowthAutomationTrackerPage />} />
               <Route path="/ghq/scorecard" element={<GrowthScorecardPage />} />
               <Route path="/ghq/context" element={<EcomAIContextPage />} />
+              <Route path="/access" element={<AccessManagementPage />} />
             </Route>
           </Route>
           <Route path="*" element={<Navigate to="/auth" replace />} />

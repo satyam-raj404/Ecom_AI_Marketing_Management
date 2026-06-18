@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.config import settings
-from backend.routers import whatsapp
+from backend.routers import whatsapp, admin
 
 app = FastAPI(title="EcomBharat Content Studio API", version="1.0.0")
 
@@ -14,6 +14,7 @@ app.add_middleware(
 )
 
 app.include_router(whatsapp.router)
+app.include_router(admin.router)
 
 
 @app.get("/health")

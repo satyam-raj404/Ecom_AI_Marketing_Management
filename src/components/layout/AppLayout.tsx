@@ -2,9 +2,10 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import {
   Link2, FileSpreadsheet, Play, Image, Settings, LogOut,
   Target, PencilLine, MessageSquare, Search, Calendar, Lightbulb, Smartphone,
-  Palette, Megaphone, Wind, Cog, BarChart3, BookOpen,
+  Palette, Megaphone, Wind, Cog, BarChart3, BookOpen, ShieldCheck,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useProfile } from "@/hooks/useProfile";
 
 const STUDIO = [
   { to: "/automation", label: "Automation", icon: Play },
@@ -45,6 +46,7 @@ const MOBILE_NAV = [
 // App shell — desktop sidebar + mobile bottom nav
 export default function AppLayout() {
   const navigate = useNavigate();
+  const { isAdmin } = useProfile();
   const signOut = async () => { await supabase.auth.signOut(); navigate("/auth"); };
 
   return (
@@ -72,6 +74,16 @@ export default function AppLayout() {
           </div>
           {GROWTH_HQ.map((item) => <NavItem key={item.to} {...item} />)}
         </nav>
+        {isAdmin && (
+          <div className="mx-3 mb-1">
+            <NavLink to="/access"
+              className={({ isActive }) =>
+                `flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition ${isActive ? "bg-marigold text-white" : "text-mustard/80 hover:bg-white/5"}`
+              }>
+              <ShieldCheck size={18} /> Access
+            </NavLink>
+          </div>
+        )}
         <button
           onClick={signOut}
           className="mx-3 mb-4 flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-cream/70 hover:bg-white/5"
