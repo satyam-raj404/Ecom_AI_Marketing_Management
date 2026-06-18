@@ -1,9 +1,14 @@
 """Admin endpoints — invite users, manage roles, revoke access."""
 import secrets
 import string
+import logging
 from fastapi import APIRouter, HTTPException, Header
 from pydantic import BaseModel
 from backend.services.supabase_client import get_supabase
+from backend.services.email import send_credentials_email
+from backend.config import settings
+
+log = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/admin", tags=["admin"])
 
@@ -89,11 +94,28 @@ async def invite_user(body: InviteBody, authorization: str = Header(...)):
         on_conflict="user_id",
     ).execute()
 
+    # Send credentials email if SMTP configured
+    email_sent = False
+    if settings.smtp_email and settings.smtp_app_password:
+        try:
+            send_credentials_email(
+                to_email=body.email,
+                display_name=body.display_name,
+                temp_password=password,
+                login_url=f"{settings.app_url}/auth",
+                from_email=settings.smtp_email,
+                smtp_password=settings.smtp_app_password,
+            )
+            email_sent = True
+        except Exception as e:
+            log.warning("Failed to send credentials email: %s", e)
+
     return {
         "success": True,
         "user_id": user.id,
         "email": body.email,
         "temp_password": password,
+        "email_sent": email_sent,
     }
 
 

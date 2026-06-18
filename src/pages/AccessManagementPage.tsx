@@ -9,7 +9,7 @@ import { useProfile } from "@/hooks/useProfile";
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate } from "react-router-dom";
 
-const API = import.meta.env.VITE_API_URL ?? "http://localhost:8002";
+const API = (import.meta.env.VITE_API_URL ?? "http://localhost:8002").replace(/\/$/, "");
 
 const ROLES = [
   { value: "admin",  label: "Admin",  icon: Crown,       color: "bg-amber-100 text-amber-800",   desc: "Full access — invite, delete, edit all" },
@@ -32,7 +32,7 @@ type Member = {
   display_name: string; position: string; role: string; created_at: string;
 };
 
-type CreatedUser = { email: string; temp_password: string };
+type CreatedUser = { email: string; temp_password: string; email_sent: boolean };
 
 async function apiCall(path: string, method: string, token: string, body?: object) {
   const res = await fetch(`${API}${path}`, {
@@ -86,7 +86,7 @@ function AccessManagementContent({ token }: { token: string }) {
     setBusy(true);
     try {
       const data = await apiCall("/api/admin/invite", "POST", token, form);
-      setCreatedUser({ email: data.email, temp_password: data.temp_password });
+      setCreatedUser({ email: data.email, temp_password: data.temp_password, email_sent: data.email_sent });
       setForm({ email: "", display_name: "", position: "", role: "member" });
       setShowForm(false);
       toast.success(`${data.email} invited`);
@@ -247,8 +247,11 @@ function AccessManagementContent({ token }: { token: string }) {
             />
           </div>
 
-          <div className="rounded-xl bg-white/70 border border-emerald-200 px-3 py-2 text-xs text-emerald-700">
-            User can log in immediately at <strong>{window.location.origin}/auth</strong>. They should change their password from Settings after first login.
+          <div className={`rounded-xl px-3 py-2 text-xs border ${createdUser.email_sent ? "bg-emerald-100 border-emerald-300 text-emerald-800" : "bg-amber-50 border-amber-200 text-amber-800"}`}>
+            {createdUser.email_sent
+              ? <>✅ Credentials email sent to <strong>{createdUser.email}</strong>. They can log in immediately.</>
+              : <>⚠️ Email not sent (SMTP not configured). Share credentials manually. Login at <strong>{window.location.origin}/auth</strong></>
+            }
           </div>
         </div>
       )}

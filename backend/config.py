@@ -16,6 +16,12 @@ class Settings(BaseSettings):
     # Comma-separated origins e.g. "http://localhost:5173,https://app.onrender.com"
     cors_origin: str = Field(default="http://localhost:5173", alias="CORS_ORIGIN")
 
+    # Gmail SMTP — optional, enables auto-email of credentials on invite
+    smtp_email: str = Field(default="", alias="SMTP_EMAIL")
+    smtp_app_password: str = Field(default="", alias="SMTP_APP_PASSWORD")
+    # Public URL shown in invite email
+    app_url: str = Field(default="http://localhost:8083", alias="APP_URL")
+
     @property
     def cors_origins(self) -> list[str]:
         return [o.strip() for o in self.cors_origin.split(",") if o.strip()]
