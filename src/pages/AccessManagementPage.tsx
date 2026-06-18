@@ -46,9 +46,12 @@ async function apiCall(path: string, method: string, token: string, body?: objec
 }
 
 export default function AccessManagementPage() {
-  const { isAdmin } = useProfile();
+  const { isAdmin, loading } = useProfile();
   const { session } = useAuth();
 
+  if (loading) return (
+    <div className="flex items-center justify-center py-20 text-ledger/40 text-sm">Loading…</div>
+  );
   if (!isAdmin) return <Navigate to="/team" replace />;
 
   return <AccessManagementContent token={session?.access_token ?? ""} />;
